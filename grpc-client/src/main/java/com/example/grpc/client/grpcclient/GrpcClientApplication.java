@@ -10,23 +10,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class GrpcClientApplication {
-
-	public static void main(String[] args) {
+	public String ping() {
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090)
 				.usePlaintext()
 				.build();
-
-		HelloServiceGrpc.HelloServiceBlockingStub stub
-				= HelloServiceGrpc.newBlockingStub(channel);
-
-		HelloResponse helloResponse = stub.hello(HelloRequest.newBuilder()
-				.setFirstName("Baeldung")
-				.setLastName("gRPC")
+		PingPongServiceGrpc.PingPongServiceBlockingStub stub
+				= PingPongServiceGrpc.newBlockingStub(channel);
+		PongResponse helloResponse = stub.ping(PingRequest.newBuilder()
+				.setPing("")
 				.build());
-
-		System.out.println(helloResponse);
-
 		channel.shutdown();
+		return helloResponse.getPong();
+	}
+
+	public static void main(String[] args) {
 
 		/*ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
 				.usePlaintext()
