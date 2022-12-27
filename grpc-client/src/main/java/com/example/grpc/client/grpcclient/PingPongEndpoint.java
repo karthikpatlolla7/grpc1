@@ -10,7 +10,7 @@ public class PingPongEndpoint {
     GRPC_ClientService grpcclientService;
     @GetMapping("/ping")
     public String ping() {
-        return (String)grpcclientService.ping();
+        return grpcclientService.ping();
     }
 
 }

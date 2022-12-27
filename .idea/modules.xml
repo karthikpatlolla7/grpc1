@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/grpc.iml" filepath="$PROJECT_DIR$/.idea/grpc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/grpc-client/grpc-client.iml" filepath="$PROJECT_DIR$/grpc-client/grpc-client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/grpc-server/grpc-server.iml" filepath="$PROJECT_DIR$/grpc-server/grpc-server.iml" />
     </modules>
   </component>
 </project>

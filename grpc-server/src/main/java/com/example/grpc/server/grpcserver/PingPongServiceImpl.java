@@ -9,7 +9,9 @@ public class PingPongServiceImpl extends PingPongServiceGrpc.PingPongServiceImpl
     public void ping(
             PingRequest request, StreamObserver<PongResponse> responseObserver) {
         String ping = new StringBuilder()
-                .append("pong")
+                .append(request.getPing())
+                .append(" ")
+                .append("World")
                 .toString();
         PongResponse response = PongResponse.newBuilder()
                 .setPong(ping)

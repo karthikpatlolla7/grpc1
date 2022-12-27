@@ -8,12 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="grpc-server" />
         <module name="grpc-client" />
+        <module name="protocol" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="grpc-client" target="11" />
-      <module name="grpc-server" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

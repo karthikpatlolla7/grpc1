@@ -16,7 +16,7 @@ public class GRPC_ClientService {
         PingPongServiceGrpc.PingPongServiceBlockingStub stub
                 = PingPongServiceGrpc.newBlockingStub(channel);
         PongResponse helloResponse = stub.ping(PingRequest.newBuilder()
-                .setPing("")
+                .setPing("Hello")
                 .build());
         channel.shutdown();
         return helloResponse.getPong();
